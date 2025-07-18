@@ -14,22 +14,45 @@ import Badge from '/snippets/badge.mdx';
   style={{ width:"20%" }}
 />
 
-# Credit Analysis Service
+## Credit Analysis Service
 
-<Badge src="https://stonepagamentos.visualstudio.com/finprods-Credit/_apis/build/status%2Fstone-payments.credit-scoring-service?repoName=stone-payments%2Fcredit-scoring-service&branchName=main&stageName=Build" link="https://stonepagamentos.visualstudio.com/finprods-Credit/_build/latest?definitionId=4968&repoName=stone-payments%2Fcredit-scoring-service&branchName=main" alt="Pipeline" />
-
-
-
-
+<Badge src="https://stonepagamentos.visualstudio.com/finprods-Credit/_apis/build/status%2Fstone-payments.credit-scoring-service?repoName=stone-payments%2Fcredit-scoring-service&branchName=main&stageName=Build"
+link="https://stonepagamentos.visualstudio.com/finprods-Credit/_build/latest?definitionId=4968&repoName=stone-payments%2Fcredit-scoring-service&branchName=main" alt="Build Status" />
+<Badge src="https://img.shields.io/badge/CRRIAN-Sprint-blue?logo=jira"
+link="https://mundipagg.atlassian.net/jira/software/c/projects/CRRIAN/boards/1144"
+alt="Jira Current Sprint" />
+<Badge src="https://img.shields.io/badge/CRRIAN-Roadmap-blue?logo=jira"
+link="https://mundipagg.atlassian.net/jira/software/c/projects/CRRIAN/boards/1144/roadmap"
+alt="Jira Roadmap Sprint" />
+<Badge src="https://img.shields.io/static/v1?label=Channel&message=credit-acquisition-analysis-team&color=blue&logo=slack"
+link="https://stonepgto.slack.com/archives/C058PGEQ5T8"
+alt="Slack Channel" />
+<Badge src="https://img.shields.io/badge/BACKSTAGE-CreditRiskAnalysisService-blue?logo=backstage"
+link="https://backstage.stone.tech/catalog/credit/system/credit-analysis"
+alt="Backstage" />
 
 ## Maturidade
 
+<Badge src="https://sonarcloud.io/api/project_badges/quality_gate?project=stone-payments_credit-scoring-service&token=e208c0b0c45843184a19dcffb8d875cdf03b7a4e"
+link="https://sonarcloud.io/summary/overall?id=stone-payments_credit-scoring-service"
+alt="Quality gate" />
+<Badge src="https://sonarcloud.io/api/project_badges/measure?project=stone-payments_credit-scoring-service&metric=coverage&token=e208c0b0c45843184a19dcffb8d875cdf03b7a4e"
+link="https://sonarcloud.io/summary/overall?id=stone-payments_credit-scoring-service"
+alt="Coverage" />
+<Badge src="https://sonarcloud.io/api/project_badges/measure?project=stone-payments_credit-scoring-service&metric=duplicated_lines_density&token=e208c0b0c45843184a19dcffb8d875cdf03b7a4e"
+link="https://sonarcloud.io/summary/overall?id=stone-payments_credit-scoring-service"
+alt="Duplicated Lines (%)" />
+<Badge src="https://sonarcloud.io/api/project_badges/measure?project=stone-payments_credit-scoring-service&metric=sqale_rating&token=e208c0b0c45843184a19dcffb8d875cdf03b7a4e"
+link="https://sonarcloud.io/summary/overall?id=stone-payments_credit-scoring-service"
+alt="Maintainability Rating" />
+<Badge src="https://sonarcloud.io/api/project_badges/measure?project=stone-payments_credit-scoring-service&metric=reliability_rating&token=e208c0b0c45843184a19dcffb8d875cdf03b7a4e"
+link="https://sonarcloud.io/summary/overall?id=stone-payments_credit-scoring-service"
+alt="Reliability Rating" />
+<Badge src="https://sonarcloud.io/api/project_badges/measure?project=stone-payments_credit-scoring-service&metric=security_rating&token=e208c0b0c45843184a19dcffb8d875cdf03b7a4e"
+link="https://sonarcloud.io/summary/overall?id=stone-payments_credit-scoring-service"
+alt="Security Rating" />
 
-
-
-
-
-## Sobre o projeto
+### Sobre o projeto
 
 Dentro do contexto de risco de crédito, nosso time tem a responsabilidade de processar diferentes tipos de análises para concessão ou desembolso de crédito aos clientes Stone, tendo como base as políticas de crédito definidas pelo negócio.
 
@@ -48,9 +71,9 @@ Principais ações:
 - Armazenar os resultados das análises;
 - Disponibilizar o resultado para tomada de decisões;
 
-## Configurações para execução da aplicação
+### Configurações para execução da aplicação
 
-##### Pré-requisitos:
+#### Pré-requisitos:
 
 Antes de começar, certifique-se de ter os seguintes requisitos instalados em sua máquina:
 
@@ -60,8 +83,7 @@ Antes de começar, certifique-se de ter os seguintes requisitos instalados em su
 - [Azure Key Vault](https://portal.azure.com/#@stone.com.br/resource/subscriptions/3b7d0560-3be1-45d8-87f2-f3ec96f3d153/resourceGroups/Credit-EC2-STG/providers/Microsoft.KeyVault/vaults/credit-kv-eastus2-dev/overview) para acesso às chaves e segredos. [[Documentação](https://mundipagg.atlassian.net/wiki/spaces/CAPITAL/pages/6125183868/Acessos+Gerais#Azure-Key-Vault)]
 - Para executar as aplicações, é necessário configurar um SQL Server em um contêiner Docker local para suportar a utilização do Hangfire. Através deste [link](https://medium.com/@eduardohenriquesartor/criando-um-sql-server-local-usando-docker-compose-1a53292bf764) é possivel acessar uma documentação de criação do SQL Server Local, e as configurações de usuário, senha e porta de acesso devem seguir a connection string que se encontra [aqui](https://portal.azure.com/#@stone.com.br/asset/Microsoft_Azure_KeyVault/Secret/https://credit-kv-eastus2-dev.vault.azure.net/secrets/credit-scoring--Hangfire-SQLServer-ConnectionString/03c1b00dd62f429381c457a76f5f4a54)
 
-##### 1. Clonar o repositório
-
+#### 1. Clonar o repositório
 Clonar o projeto do repositório oficial usando o comando abaixo:
 
 ```bash
@@ -69,31 +91,27 @@ git clone https://github.com/stone-payments/credit-scoring-service.git
 cd credit-scoring-service
 ```
 
-##### 2. Instalar dependências
-
+#### 2. Instalar dependências
 Após acessar o diretório do projeto, realize a compilação do projeto para baixar todas as dependências.
 
-##### 3. Configurar variáveis de ambiente
-
+#### 3. Configurar variáveis de ambiente
 Todas as variáveis de ambiente necessárias já estão configuradas no arquivo:
 `CreditRiskAnalysisService.Api -> Properties -> launchSettings.json` e na Azure Key Vault.
 
-##### 4. Executar os serviços
-
+#### 4. Executar os serviços
 Inicie os seguintes serviços para rodar a aplicação:
 
 - `CreditRiskAnalysisService.Api`
 - `CreditRiskAnalysisService.Loader`
 - `CreditRiskAnalysisService.Worker`
 
-##### 5. Ignorar os serviços não utilizados
-
+#### 5. Ignorar os serviços não utilizados
 Os seguintes serviços **não precisam ser executados**, pois não são utilizados:
 
 - `CreditRiskExecution.Api`
 - `CreditRiskExecution.Worker`
 
-## Azure DNS
+### Azure DNS
 
 | Ambiente   | Região     | Tipo    | Nome                                                                           |
 | ---------- | ---------- | ------- | ------------------------------------------------------------------------------ |
@@ -110,130 +128,4 @@ Os seguintes serviços **não precisam ser executados**, pois não são utilizad
 | Production | Central US | Private | `credit-scoring-worker-centralus.apps.stone.com.br`                            |
 | Production | Central US | Private | `credit-scoring-loader-centralus.apps.stone.com.br`                            |
 
-## Contato
-
-<table>
-<tr>
-<td align="center">
-<a href="https://github.com/SaboiaEric">
-<img
-  src="https://ca.slack-edge.com/TB5G2HVQQ-U0684GM1VRS-9bbd613c054c-512"
-  style={{ width:"80px" }}
-  alt=""
-  title="eric.saboia@stone.com.br"
-/>
-
-<br />
-
-Eric Saboia</a>
-
-</td>
-
-<td align="center">
-<a href="https://github.com/ncfcj">
-<img
-  src="https://ca.slack-edge.com/E07UHBYP7PW-U083P6Y22KZ-39b4e2cce336-512"
-  style={{ width:"80px" }}
-  alt=""
-  title="nilton.costa@stone.com.br"
-/>
-
-<br />
-
-Nilton Cosme</a>
-
-</td>
-
-<td align="center">
-<a href="https://github.com/thiagofer93">
-<img
-  src="https://ca.slack-edge.com/TB5G2HVQQ-U03C2TU8BPD-5adcbce15193-512"
-  style={{ width:"80px" }}
-  alt=""
-  title="tferreira@stone.com.br"
-/>
-
-<br />
-
-Thiago Ferreira</a>
-
-</td>
-
-<td align="center">
-<a href="https://github.com/LucaxSebastian">
-<img
-  src="https://ca.slack-edge.com/TB5G2HVQQ-U03JGG1V3F0-b3d0ca77d312-512"
-  style={{ width:"80px" }}
-  alt=""
-  title="lucas.sebastian@stone.com.br"
-/>
-
-<br />
-
-Lucas Sebastian</a>
-
-</td>
-
-<td align="center">
-<a href="https://github.com/diegocstone">
-<img
-  src="https://ca.slack-edge.com/TB5G2HVQQ-U07F78UK4HJ-281271e5c574-512"
-  style={{ width:"80px" }}
-  alt=""
-  title="diego.cordeiro@stone.com.br"
-/>
-
-<br />
-
-Diego Cordeiro</a>
-
-</td>
-
-<td align="center">
-<a href="https://github.com/marttheus">
-<img
-  src="https://ca.slack-edge.com/E07UHBYP7PW-U02JJB6BYQL-7c3e5983feb6-512"
-  style={{ width:"80px" }}
-  alt=""
-  title="matheus.mcoelho@stone.com.br"
-/>
-
-<br />
-
-Matheus Felipe</a>
-
-</td>
-
-<td align="center">
-<a href="https://github.com/mauricioroge">
-<img
-  src="https://ca.slack-edge.com/E07UHBYP7PW-U08UJDV5VH6-06e712e09e90-512"
-  style={{ width:"80px" }}
-  alt=""
-  title="mauricio.araujo@stone.com.br"
-/>
-
-<br />
-
-Mauricio Araujo</a>
-
-</td>
-
-<td align="center">
-<a href="https://github.com/LuanSantos00">
-<img
-  src="https://ca.slack-edge.com/E07UHBYP7PW-U091544E8F2-293b71c52d65-512"
-  style={{ width:"80px" }}
-  alt=""
-  title="luan.cosme@stone.com.br"
-/>
-
-<br />
-
-Luan Santos</a>
-
-</td>
-
-</tr>
-
-</table>
+### Contato
